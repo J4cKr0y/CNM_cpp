@@ -138,3 +138,24 @@ void Person::afficher() const {
     if (birthYear) std::cout << ", Annee: " << *birthYear;
     std::cout << std::endl;
 }
+
+int Person::getId() const { return id; }
+std::string Person::getName() const { return name; }
+
+int Person::getAge() const {
+    if (age) return *age;
+    return -1; // Valeur par défaut si nul
+}
+
+const char* Person::getLastName() const {
+    return lastName ? lastName : "";
+}
+
+int Person::getBirthYear() const {
+    if (birthYear) return *birthYear;
+    return 0;
+}
+
+const int* Person::getAgePtr() const {
+    return age; // Retourne l'adresse mémoire (pour vérifier qu'elle change lors de la copie)
+}

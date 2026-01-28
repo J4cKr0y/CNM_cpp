@@ -38,6 +38,16 @@ public:
 
     // Méthode utilitaire pour afficher l'objet
     void afficher() const;
+
+    // Getters pour les tests
+    int getId() const;
+    std::string getName() const;
+    int getAge() const;           // Retourne la valeur (ou -1 si pointeur nul)
+    const char* getLastName() const; // Retourne la chaine C
+    int getBirthYear() const;     // Retourne la valeur du shared_ptr
+
+    // Pour vérifier la Deep Copy (on veut voir si les adresses mémoire sont différentes)
+    const int* getAgePtr() const;
 };
 
 #endif
